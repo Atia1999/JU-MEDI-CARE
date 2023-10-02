@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "223462996450",
+    "project_id": "jumedicare",
+    "storage_bucket": "jumedicare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223462996450:android:0ba098089c50e446cb61bb",
+        "android_client_info": {
+          "package_name": "com.example.jumedical"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxF4u33t8jQ0d5OLA5R-gVVPOo9xPWA3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
