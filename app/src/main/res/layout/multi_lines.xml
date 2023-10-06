@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#9ac0cd ">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lin_a"
+        android:text="line1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lin_b"
+        android:text="line2"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:id="@+id/lin_c"
+            android:text="line3"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin_d"
+            android:text="line4"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>

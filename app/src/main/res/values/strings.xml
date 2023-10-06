@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JU MEDICAL</string>
+    <string name="Navigation_open">Open Navigation Drawer</string>
+    <string name="Navigation_close">Close Navigation Drawer</string>
 </resources>
