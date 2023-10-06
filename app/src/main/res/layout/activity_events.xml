@@ -27,7 +27,14 @@
                 android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
                 android:background="#2255FF"
                 tools:ignore="MissingConstraints"
-                app:titleTextColor="@color/white"/>
+                app:titleTextColor="@color/white">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/medical_logo"
+                    android:layout_marginStart="160dp"
+                    />
+            </androidx.appcompat.widget.Toolbar>
 
 
             <GridLayout
@@ -52,7 +59,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 
@@ -85,7 +92,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 
@@ -118,7 +125,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 
@@ -151,7 +158,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 
@@ -184,7 +191,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 
@@ -216,7 +223,7 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
-                    app:cardBackgroundColor="#9ac0cd "
+                    app:cardBackgroundColor="#2255FF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true">
 

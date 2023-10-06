@@ -22,7 +22,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_back">
+        android:background="#ADD8FF">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,7 +30,14 @@
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             android:background="#2255FF"
             tools:ignore="MissingConstraints"
-            app:titleTextColor="@color/white"/>
+            app:titleTextColor="@color/white">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/medical_logo"
+                android:layout_marginStart="160dp"
+                />
+        </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="406dp"

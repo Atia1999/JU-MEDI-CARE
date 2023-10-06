@@ -29,7 +29,16 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         android:background="#2255FF"
         tools:ignore="MissingConstraints"
-        app:titleTextColor="@color/white"/>
+        app:titleTextColor="@color/white"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/medical_logo"
+            android:layout_marginStart="160dp"
+             />
+    </androidx.appcompat.widget.Toolbar>
+
        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
          xmlns:app="http://schemas.android.com/apk/res-auto"
           xmlns:tools="http://schemas.android.com/tools"
@@ -86,7 +95,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginTop="40dp"
         android:text="LOG IN"
-        android:id="@+id/login"/>
+        android:id="@+id/login" />
          <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
