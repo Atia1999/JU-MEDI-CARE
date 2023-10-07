@@ -17,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ArticlesDetails extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,11 +28,15 @@ public class ArticlesDetails extends AppCompatActivity implements NavigationView
     Toolbar toolbar;
     TextView tv1;
     ImageView iv1;
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles_details);
 
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         //article details
         tv1=findViewById(R.id.title_AD);
         iv1=findViewById(R.id.imageview_AD);
@@ -131,6 +138,16 @@ public class ArticlesDetails extends AppCompatActivity implements NavigationView
 
                 intent.setPackage("com.android.vending");
 
+                startActivity(intent);
+                break;
+            }
+            case  R.id.nav_logout: {
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                intent = new Intent(ArticlesDetails.this, MainActivity.class);
                 startActivity(intent);
                 break;
             }

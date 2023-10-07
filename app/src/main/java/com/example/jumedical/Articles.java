@@ -20,6 +20,9 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +33,8 @@ public class Articles extends AppCompatActivity implements NavigationView.OnNavi
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    private DatabaseReference mDatabase;
+
         private String[][] Article_details={
                 {"Walking Daily","","","Click More Details"},
                 {"Covid 19 Awareness","","","Click More Details"},
@@ -57,6 +62,8 @@ public class Articles extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.activity_articles);
 
 
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         //Articles
         lst=findViewById(R.id.listviewArticle);
         List = new ArrayList<>();
@@ -174,6 +181,16 @@ public class Articles extends AppCompatActivity implements NavigationView.OnNavi
                     intent.setData(Uri.parse("tel:" + phoneNumber));
 
                     startActivity(intent);
+                }
+                case  R.id.nav_logout: {
+                    mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                    // Sign out from Firebase Authentication (if used)
+                    // Navigate back to the LoginActivity or any other appropriate screen
+                    intent = new Intent(Articles.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
                 }
 
 

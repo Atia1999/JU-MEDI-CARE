@@ -18,6 +18,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,11 +32,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     Toolbar toolbar;
     Button loginBtn;
+    private DatabaseReference mDatabase;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //// Authentication
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        // Check if the user is already logged in (based on the flag)
+        checkUserLoginStatus();
 
         drawerLayout=findViewById(R.id.drawerlayout);
         navigationView=findViewById(R.id.navigation_view);
@@ -141,4 +156,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //Authentucate
+
+    private void checkUserLoginStatus() {
+        mDatabase.child("users").child("isLoggedIn").addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Boolean isLoggedIn = dataSnapshot.getValue(Boolean.class);
+
+                        if (isLoggedIn != null && isLoggedIn) {
+                            // The user is marked as logged in, navigate to the HomeActivity
+                            Intent intent = new Intent(MainActivity.this, Home .class);
+                            startActivity(intent);
+                            finish(); // Optional, close MainActivity
+                        } else {
+                            // The user is not marked as logged in, display the login screen
+                            // You can handle this case as per your app's logic
+                        }
+                    }
+
+
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle database error
+                    }
+                });
+    }
+
 }

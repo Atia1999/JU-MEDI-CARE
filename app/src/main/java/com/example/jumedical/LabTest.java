@@ -17,11 +17,16 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LabTest extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+
+    private DatabaseReference mDatabase;
 
     private String[][] Package_details={
             {"Test 1:CBC","","","Fees: 299/-"},
@@ -41,6 +46,8 @@ public class LabTest extends AppCompatActivity implements NavigationView.OnNavig
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_test);
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //nav bar
         drawerLayout=findViewById(R.id.drawerlayout5);
@@ -116,10 +123,7 @@ public class LabTest extends AppCompatActivity implements NavigationView.OnNavig
                 intent = new Intent(LabTest.this,Login.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_logout:
-                intent = new Intent(LabTest.this,MainActivity.class);
-                startActivity(intent);
-                break;
+
 
             case R.id.nav_email:
             {String recipientEmail = "jucse28.346@gmail.com";
@@ -157,6 +161,16 @@ public class LabTest extends AppCompatActivity implements NavigationView.OnNavig
                 intent.setData(Uri.parse("tel:" + phoneNumber));
 
                 startActivity(intent);
+            }
+            case  R.id.nav_logout: {
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                intent = new Intent(LabTest.this, MainActivity.class);
+                startActivity(intent);
+                break;
             }
 
 

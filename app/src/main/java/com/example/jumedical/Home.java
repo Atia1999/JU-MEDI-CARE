@@ -19,6 +19,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,11 +29,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     NavigationView navigationView;
     Toolbar toolbar;
     Button homebtn;
+
+   //log out
+    private DatabaseReference mDatabase;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //log out
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //navigation
         drawerLayout=findViewById(R.id.drawerlayout2);
@@ -143,10 +153,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(intent);
                 break;
             }
-            case R.id.nav_logout:
-                intent = new Intent(Home.this, MainActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.nav_email:
             {String recipientEmail = "jucse28.346@gmail.com";
 
@@ -184,6 +191,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
                 startActivity(intent);
             }
+            case  R.id.nav_logout:
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                 intent = new Intent(Home.this, MainActivity.class);
+                startActivity(intent);
+                finish();
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);

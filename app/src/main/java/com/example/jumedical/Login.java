@@ -97,6 +97,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                                 if(getpassword.equals(passwordtxt))
                                 {
                                     Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
+                                    databaseReference.child("users").child("isLoggedIn").setValue(true);
 
                                     //open mainactivity and finish login activity
                                     startActivity(new Intent(Login.this,Home.class));

@@ -18,9 +18,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Events extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
+
+    private DatabaseReference mDatabase;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -31,6 +36,8 @@ public class Events extends AppCompatActivity implements NavigationView.OnNaviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         // Events
         CardView ev1=findViewById(R.id.event1);
@@ -192,6 +199,16 @@ public class Events extends AppCompatActivity implements NavigationView.OnNaviga
                 intent.setData(Uri.parse("tel:" + phoneNumber));
 
                 startActivity(intent);
+            }
+            case  R.id.nav_logout: {
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                intent = new Intent(Events.this, MainActivity.class);
+                startActivity(intent);
+                break;
             }
 
 

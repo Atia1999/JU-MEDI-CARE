@@ -17,11 +17,16 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Doctor extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private DatabaseReference mDatabase;
 
     private String[][] Doctor_Details={
             {"Name:DR.MD. SHAMSUR RAHMAN","Position: Chief Medical Officer","Email: drsrlabu19@gmail.com","Office Phone No: 1324"},
@@ -44,6 +49,8 @@ public class Doctor extends AppCompatActivity implements NavigationView.OnNaviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //nav bar
         drawerLayout=findViewById(R.id.drawerlayout4);
@@ -119,10 +126,7 @@ public class Doctor extends AppCompatActivity implements NavigationView.OnNaviga
                 intent = new Intent(Doctor.this,Login.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_logout:
-                intent = new Intent(Doctor.this,MainActivity.class);
-                startActivity(intent);
-                break;
+
 
             case R.id.nav_email:
             {String recipientEmail = "jucse28.346@gmail.com";
@@ -160,6 +164,16 @@ public class Doctor extends AppCompatActivity implements NavigationView.OnNaviga
                 intent.setData(Uri.parse("tel:" + phoneNumber));
 
                 startActivity(intent);
+            }
+            case  R.id.nav_logout: {
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                intent = new Intent(Doctor.this, MainActivity.class);
+                startActivity(intent);
+                break;
             }
 
         }

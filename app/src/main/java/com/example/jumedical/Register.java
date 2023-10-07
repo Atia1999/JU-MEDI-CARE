@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private DatabaseReference mDatabase;
 
 
     //create object of database reference class to access forebases's realtime database
@@ -43,6 +45,10 @@ public class Register extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        FirebaseApp.initializeApp(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        //Registration code
         final EditText name= findViewById(R.id.name);
         final EditText email=findViewById(R.id.email);
         final EditText phone =findViewById(R.id.phone);
@@ -214,6 +220,16 @@ public class Register extends AppCompatActivity implements NavigationView.OnNavi
 
                 intent.setPackage("com.android.vending");
 
+                startActivity(intent);
+                break;
+            }
+            case  R.id.nav_logout: {
+                mDatabase.child("users").child("isLoggedIn").setValue(false);
+
+
+                // Sign out from Firebase Authentication (if used)
+                // Navigate back to the LoginActivity or any other appropriate screen
+                intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);
                 break;
             }
