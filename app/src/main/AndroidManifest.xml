@@ -14,10 +14,10 @@
         android:theme="@style/Theme.JUMEDICAL"
         tools:targetApi="31">
         <activity
-            android:name=".ArticlesDetails"
+            android:name=".Gallery"
             android:exported="false" />
         <activity
-            android:name=".Gallery"
+            android:name=".ArticlesDetails"
             android:exported="false" />
         <activity
             android:name=".Articles"

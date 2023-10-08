@@ -54,6 +54,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         //hide or show menu items
         Menu menu=navigationView.getMenu();
         menu.findItem(R.id.nav_login).setVisible(false);
+        menu.findItem(R.id.nav_home).setVisible(false);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.Navigation_open,R.string.Navigation_close);
