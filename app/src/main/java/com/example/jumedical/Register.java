@@ -99,6 +99,9 @@ public class Register extends AppCompatActivity implements NavigationView.OnNavi
                 else if (!passtext.equals(conpasstxt)) {
                     Toast.makeText(Register.this, "Passwords are not matching ", Toast.LENGTH_SHORT).show();
 
+                } else if (passtext.length()<4) {
+                    Toast.makeText(Register.this, "Password is too short, Please recheck!", Toast.LENGTH_SHORT).show();
+
                 }
 
                 // check if passwords are matching

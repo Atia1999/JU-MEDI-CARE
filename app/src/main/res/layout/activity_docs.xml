@@ -180,13 +180,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dr Samsur Rahman"
+                            android:text="Dr MD Shamsul Alam"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chief Medical officer"
+                            android:text="Deputy  Medical officer"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
@@ -254,13 +254,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dr Samsur Rahman"
+                            android:text="Dr Brerendro Kumar "
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chief Medical officer"
+                            android:text="Deputy  Medical officer"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
@@ -328,13 +328,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dr Samsur Rahman"
+                            android:text="Dr Shamol Kumar Shill"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chief Medical officer"
+                            android:text="Senior Medical officer"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
@@ -402,13 +402,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dr Samsur Rahman"
+                            android:text="Dr Likhon"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chief Medical officer"
+                            android:text=" Medical officer"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
@@ -477,13 +477,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dr Samsur Rahman"
+                            android:text="Dr Asma Siddiqa"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chief Medical officer"
+                            android:text=" Medical officer"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
                         <TextView
