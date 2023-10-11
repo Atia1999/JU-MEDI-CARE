@@ -71,7 +71,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Home.this,Doctor.class));
+                startActivity(new Intent(Home.this,Docs.class));
 
             }
         });
