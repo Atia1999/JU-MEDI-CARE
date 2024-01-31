@@ -1,10 +1,11 @@
-**JU E-Book Store | SQA | 2024 (Currently working)
-It is an ongoing project for Software Quality Assurance that will test whether the software works perfectly for book buying online & offline for Jahangirnagar University Students, Teachers & staffs.
-•	Tools: JS, JSDoc, Trello, Git wiki, GitHub, Discord, Unit Testing, Integration Testing.
-•	Features:
-o	Users can search books
-o	Order hardcopy or order softcopy and read it online
-o	Can make payments
-o	Can rate, review & share
-o	Can make a wishlist
+## JU MediCare | Android Application | 2023
+### An application dedicated to residents of Jahangirnagar University campus to get access to doctors, pharmacy & other medical related information.
 
+   *	Tools Used: Android Studio, Firebase, java.
+   *  Features:
+       1.	Emergency Ambulance call.
+       2.	Provides shortest path to reach the JU medical.
+       3.	Doctor’s appointment through direct call or email.
+       4.	 Health articles to keep the dwellers updated.
+       5.	 News on various medical care events and their activities.
+       6.	 Users can see the price list of the basic tests that are done in the medical.
